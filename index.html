@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Untuk Kamu, Sayang❤️</title>
+  <meta name="description" content="Halaman kecil penuh cinta untuk pacar kamu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#ffdee9; /* pink */
+      --bg2:#b5fffc; /* cyan */
+      --card:#ffffffee;
+      --ink:#222;
+      --accent:#ff3b6e;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background: linear-gradient(135deg,var(--bg1),var(--bg2));
+      overflow-x:hidden;
+    }
+    .wrap{
+      min-height:100dvh;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      position:relative;
+      isolation:isolate;
+    }
+    /* Floating hearts background */
+    .hearts{position:absolute; inset:0; overflow:hidden; z-index:-1}
+    .heart{position:absolute; width:14px; height:14px; transform:rotate(45deg); background:var(--accent); opacity:.15; filter:blur(.3px)}
+    .heart:before,.heart:after{content:""; position:absolute; width:14px; height:14px; background:var(--accent); border-radius:50%}
+    .heart:before{left:-7px}
+    .heart:after{top:-7px}
+    @keyframes floatUp { from { transform:translateY(0) rotate(45deg); } to { transform:translateY(-110vh) rotate(45deg); } }.card{
+  width:100%; max-width:900px;
+  background:var(--card);
+  border-radius:24px;
+  box-shadow:0 20px 60px rgba(0,0,0,.12);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.6);
+  backdrop-filter: blur(6px);
+}
+.hero{
+  position:relative;
+  padding:28px 22px 18px;
+  background: radial-gradient(1200px 400px at 50% -10%, rgba(255,255,255,.8), transparent),
+              linear-gradient(135deg, #ffd1dc 0%, #ffe1f1 60%, #fff 100%);
+}
+.row{display:flex; gap:20px; align-items:center; flex-wrap:wrap}
+.photo{
+  width:120px; height:120px; flex:0 0 120px;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  overflow:hidden; border:3px solid #fff
+}
+.photo img{width:100%; height:100%; object-fit:cover}
+.title{
+  flex:1;
+}
+.title h1{
+  margin:0; font-size:clamp(28px, 4vw, 44px);
+  line-height:1.1; font-weight:700;
+}
+.title p{
+  margin:6px 0 0; opacity:.8
+}
+.sig{
+  font-family:'Sacramento', cursive; font-size: clamp(26px, 5vw, 40px); color:var(--accent);
+}
+
+.message{padding:22px}
+.paper{
+  background:#fff;
+  border-radius:18px;
+  padding:18px 18px 22px;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+  border:1px dashed #ffd1dc;
+  position:relative;
+}
+.paper:before{
+  content:""; position:absolute; inset:0; background: repeating-linear-gradient(transparent 0 26px, rgba(255,59,110,.08) 26px 27px);
+  border-radius:18px; pointer-events:none
+}
+.typewriter{min-height:56px; font-size:1.05rem}
+.blink{display:inline-block; width:10px; background:var(--ink); margin-left:2px; animation: blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.grid{
+  display:grid; gap:14px; margin-top:16px;
+  grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+}
+.note{
+  background:#fff; border-radius:16px; padding:14px; border:1px solid #ffe3ea; box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+.note b{color:var(--accent)}
+
+.cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+.btn{
+  appearance:none; border:none; cursor:pointer;
+  padding:12px 16px; border-radius:12px; font-weight:600;
+  background:var(--ink); color:#fff; transition:.2s transform, .2s box-shadow;
+  box-shadow:0 6px 16px rgba(0,0,0,.2)
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:var(--accent)}
+
+.letter{display:none; margin-top:14px}
+.letter.show{display:block}
+
+.gallery{padding:0 22px 22px}
+.gallery h3{margin:10px 0 10px}
+.pics{display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(120px,1fr));}
+.pic{aspect-ratio:1/1; border-radius:14px; overflow:hidden; box-shadow:0 6px 16px rgba(0,0,0,.08); border:1px solid #fff}
+.pic img{width:100%; height:100%; object-fit:cover}
+
+footer{padding:16px 22px 26px; text-align:center; opacity:.8}
+.small{font-size:.9rem}
+
+/* Responsive tweak */
+@media (max-width:420px){
+  .photo{width:96px; height:96px; flex-basis:96px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hearts" id="hearts" aria-hidden="true"></div><main class="card" role="main">
+  <section class="hero">
+    <div class="row">
+      <div class="photo" aria-hidden="true">
+        <!-- Ganti src di bawah dengan foto kalian -->
+        <img src="vania.jpg" alt="Foto pacar"/>
+      </div>
+      <div class="title">
+        <!-- Ganti nama pacar & pengirim di sini -->
+        <h1>Untuk Pacarku <span style="color:var(--accent)">Ester Vania Christina</span> 💖</h1>
+        <p class="small">Dari: <b>Firmansyah</b> • <span id="date">[12 Agustus 2024]</span></p>
+        <p class="sig">Aku sayang kamu, hari ini,Besok Dan selamanya.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="message" aria-live="polite">
+    <div class="paper">
+      <p class="typewriter" id="typewriter"></p>
+      <div class="cta">
+        <button class="btn" id="toggleLetter">Buka Surat ❤️</button>
+      </div>
+      <div class="letter" id="letter">
+        <!-- Tulis suratmu di sini -->
+        <p>Sayangku,
+          <br/>Terima kasih sudah hadir dan Selalu ada buat aku. Aku bangga dengan kamu, dengan cara kamu tertawa, dan cara kamu berjuang. Kalau dunia terasa berat, ingat ya kamu selalu punya aku,Dan Maaf kalau selama ini aku belum sepenuhnya bahagiain Kamu.
+          <br/><br/>Dengan penuh cinta,
+          <br/>Firmansyah
+        </p>
+      </div>
+    </div>
+
+    <div class="grid" aria-label="Alasan aku sayang kamu">
+      <div class="note"><b>1.</b> Kamu menemani Dari awal Sampai sekarang.</div>
+      <div class="note"><b>2.</b> Senyummu bikin hari jadi cerah.</div>
+      <div class="note"><b>3.</b> Kamu Bukan Cuma Cantik Kamu Juga Pekerja Keras.</div>
+      <div class="note"><b>4.</b> Semoga Hal Yang Ingin Kita Wujudkan Terwujud Bareng Yah.</div>
+      <div class="note"><b>5.</b> Kamu Hal Terindah Yang Aku Punya.</div>
+      <div class="note"><b>6.</b> Semoga Kita Bisa selalu Bersama Sekarang Besok Dan Selamanya. 💪</div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h3>Galeri Kenangan</h3>
+    <div class="pics">
+      <!-- Ganti gambar-gambar ini dengan foto kalian -->
+      <div class="pic"><img src="C.PNG" alt="Kenangan 1"></div>
+      <div class="pic"><img src="1.PNG" alt="Kenangan 2"></div>
+      <div class="pic"><img src="A.PNG" alt="Kenangan 3"></div>
+      <div class="pic"><img src="B.PNG" alt="Kenangan 4"></div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="small">Dibuat dengan ❤️ oleh <b>Firmansyah</b>. </div>
+  </footer>
+</main>
+
+  </div>  <script>
+    // ========== Helper: Tanggal otomatis jika belum diisi ==========
+    (function setDate(){
+      const span = document.getElementById('date');
+      if(span && span.textContent.includes('[')){
+        const now = new Date();
+        const opts = { day:'2-digit', month:'long', year:'numeric' };
+        span.textContent = now.toLocaleDateString('id-ID', opts);
+      }
+    })();
+
+    // ========== Floating hearts generator ==========
+    const heartsEl = document.getElementById('hearts');
+    function makeHeart(){
+      const h = document.createElement('div');
+      h.className = 'heart';
+      const size = Math.random()*16 + 8; // 8-24px
+      h.style.width = size + 'px';
+      h.style.height = size + 'px';
+      h.style.left = Math.random()*100 + 'vw';
+      h.style.bottom = '-20px';
+      h.style.opacity = (Math.random()*0.2 + 0.05).toFixed(2);
+      const dur = Math.random()*12 + 10; // 10-22s
+      h.style.animation = `floatUp ${dur}s linear forwards`;
+      heartsEl.appendChild(h);
+      setTimeout(()=>h.remove(), dur*1000);
+    }
+    for(let i=0;i<24;i++) setTimeout(makeHeart, i*300);
+    setInterval(makeHeart, 1200);
+
+    // ========== Typewriter love message ==========
+    const message = `Aku nggak butuh alasan besar untuk mencintaimu. 
+Setiap hal kecil tentang kamu—cara kamu tertawa, semangat kamu, perhatian kamu—cukup untuk bikin aku jatuh lagi setiap hari. ❤️`;
+    const el = document.getElementById('typewriter');
+    const cursor = document.createElement('span');
+    cursor.className = 'blink';
+    let i = 0;
+    function type(){
+      if(i < message.length){
+        el.textContent += message.charAt(i);
+        i++;
+        setTimeout(type, 22 + Math.random()*30);
+      } else {
+        el.appendChild(cursor);
+      }
+    }
+    type();
+
+    // ========== Toggle letter ==========
+    const btn = document.getElementById('toggleLetter');
+    const letter = document.getElementById('letter');
+    btn.addEventListener('click', ()=>{
+      letter.classList.toggle('show');
+      btn.textContent = letter.classList.contains('show') ? 'Tutup Surat 💌' : 'Buka Surat ❤️';
+    });
+
+    // ========== WhatsApp share ==========
+    document.getElementById('sendWA').addEventListener('click', ()=>{
+      const name = document.querySelector('.title h1').textContent.replace('Untuk ','');
+      const text = `Hai ${name}!%0A%0A` +
+        encodeURIComponent('Aku bikin halaman kecil buat kamu 🤍. Buka ya, semoga kamu suka!') +
+        `%0A%0A` + encodeURIComponent(window.location.href);
+      window.open(`https://wa.me/?text=${text}`,'_blank');
+    });
+  </script></body>
+</html>
